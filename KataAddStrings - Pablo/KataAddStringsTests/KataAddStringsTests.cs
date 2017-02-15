@@ -109,7 +109,7 @@ namespace KataAddStringsTests
         {
             Calculadora calc = new Calculadora();
 
-            var resultado = calc.Add("//?1?2?3?-4");
+            var resultado = calc.Add("//?-1?2?3?4");
 
             var resultadoEsperado = 10;
 

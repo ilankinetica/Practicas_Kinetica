@@ -17,6 +17,7 @@ namespace KataAddStrings
             char[] array = new char[length];
             array = numeros.ToCharArray();
             char del = ',';
+            string concat;
                        
             if (numeros == "")
             {                
@@ -40,7 +41,17 @@ namespace KataAddStrings
 
                 if (array[i] != ',' && array[i] != del)
                 {
-                    num += array[i].ConvertirAEntero();
+                    if (array[i] == '-')
+                    {
+                        concat = array[i].ToString() + array[i + 1].ToString();
+                        concat.ConvertirAEntero();
+                    }
+
+                    else
+                    {
+                        num += array[i].ConvertirAEntero();
+                    }
+                    
                 }                           
             }
 

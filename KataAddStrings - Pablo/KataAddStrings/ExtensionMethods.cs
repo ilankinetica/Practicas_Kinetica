@@ -22,5 +22,21 @@ namespace KataAddStrings
             return a;
 
         }
+
+        public static int ConvertirAEntero(this string x)
+        {
+            int a;
+
+            a = Convert.ToInt32(x);
+
+            if (a < 0)
+            {
+                throw new Exception("No se permiten números negativos: " + a);
+            }
+
+            return a;
+
+
+        }
     }
 }
