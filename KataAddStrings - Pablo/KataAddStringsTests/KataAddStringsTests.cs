@@ -111,7 +111,19 @@ namespace KataAddStringsTests
 
             var resultado = calc.Add("//?-1?2?3?4");
 
-            var resultadoEsperado = 10;
+            var resultadoEsperado = 8;
+
+            Assert.AreEqual(resultadoEsperado, resultado);
+        }
+
+        [TestMethod]
+        public void SumarConOtroDelimitadorConDosNegativos()
+        {
+            Calculadora calc = new Calculadora();
+
+            var resultado = calc.Add("//?-1?2?3?-4");
+
+            var resultadoEsperado = 0;
 
             Assert.AreEqual(resultadoEsperado, resultado);
         }

@@ -17,8 +17,9 @@ namespace KataAddStrings
             char[] array = new char[length];
             array = numeros.ToCharArray();
             char del = ',';
-            string concat;
-                       
+            string concat, error = string.Empty;
+            //IList<int> intList = new List<int>();
+
             if (numeros == "")
             {                
                 num = 0;
@@ -44,7 +45,9 @@ namespace KataAddStrings
                     if (array[i] == '-')
                     {
                         concat = array[i].ToString() + array[i + 1].ToString();
-                        concat.ConvertirAEntero();
+                        error += concat + " , ";
+                        //intList.Add(concat.ConvertirAEntero());                        
+                        i++;
                     }
 
                     else
@@ -52,8 +55,19 @@ namespace KataAddStrings
                         num += array[i].ConvertirAEntero();
                     }
                     
-                }                           
+                }
+                                     
             }
+
+            if (array.Contains('-'))
+            {
+                throw new Exception("No se permiten números negativos: " + error);
+            }
+
+            //if (intList.Count > 0)
+            //{
+
+            //}
 
             return num;
 

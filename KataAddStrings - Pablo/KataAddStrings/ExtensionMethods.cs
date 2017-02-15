@@ -29,10 +29,10 @@ namespace KataAddStrings
 
             a = Convert.ToInt32(x);
 
-            if (a < 0)
-            {
-                throw new Exception("No se permiten números negativos: " + a);
-            }
+            //if (a < 0)
+            //{
+            //    throw new Exception("No se permiten números negativos: " + a);
+            //}
 
             return a;
 
