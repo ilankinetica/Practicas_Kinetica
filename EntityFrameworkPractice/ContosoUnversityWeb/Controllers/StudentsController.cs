@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ContosoUnversityWeb.Models;
+using NLog;
 
 namespace ContosoUnversityWeb.Controllers
 {
@@ -17,6 +18,7 @@ namespace ContosoUnversityWeb.Controllers
         // GET: Students
         public ActionResult Index()
         {
+            LogManager.GetCurrentClassLogger().Trace("Index students");
             return View(db.Students.ToList());
         }
 
